@@ -10,6 +10,11 @@ gem "do_sqlite3"
 gem "dm-sqlite-adapter", "1.0.0"
 gem "memcache-client"
 
+group :development do
+  gem "shotgun"
+  gem "racksh"
+end
+
 group :test do
   gem "rspec",        "1.3.0"
   gem "dm-sweatshop", "1.0.0"
