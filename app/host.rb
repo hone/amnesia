@@ -6,7 +6,7 @@ class Host
   
   def alive? 
     return true if connection.stats
-  rescue MemCache::MemCacheError
+  rescue Dalli::DalliError
     return false
   end
   
@@ -16,13 +16,13 @@ class Host
   
   def stats
     connection.stats[connection.stats.keys.first]
-  rescue MemCache::MemCacheError
+  rescue Dalli::DalliError
     return {}
   end
   
   private
   
   def connection
-    @connection ||= MemCache.new(self.address)
+    @connection ||= Dalli::Client.new(self.address)
   end
 end

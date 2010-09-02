@@ -42,7 +42,7 @@ describe "response to paths" do
     end
     
     it "should respond to /hosts/num" do
-      host = Host.gen
+      host = Host.gen(:local)
       
       get "/hosts/#{host.id}"
       last_response.status.should == 200

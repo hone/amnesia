@@ -8,7 +8,7 @@ gem "gchart",            "1.0.0"
 gem "rake",              "0.8.7"
 gem "do_sqlite3"
 gem "dm-sqlite-adapter", "1.0.0"
-gem "memcache-client"
+gem "dalli",             "0.9.2"
 
 group :development do
   gem "shotgun"
